@@ -258,8 +258,11 @@ print(as.data.frame(tabulasi_posisi_baru), row.names = FALSE)
 ### Insight 1: Pendaftar dan Selektivitas
 
 Observasi: Pendaftar meningkat, sedangkan acceptance rate menurun.
+
 Bukti: Pendaftar naik 3.754 → 6.518 (2022–2026), accept rate turun 53% →
-47%. Visualisasi: Tren pendaftar dan acceptance rate.
+47%. 
+
+Visualisasi: Tren pendaftar dan acceptance rate.
 
 ``` r
 library(ggplot2)
@@ -313,15 +316,18 @@ ggplot(df_wawasan1, aes(x = Tahun)) +
 
 ![University_Admissions_and_Student_Insights](insight1.png)<!-- -->
 
-Implikasi: Pendaftar meningkat, proses admisi&kapasitas perlu
-disesuaikan. Rekomendasi: Tingkatkan digitalisasi admisi&tambah kuota
-bila diperlukan.
+
+Implikasi: Pendaftar meningkat, proses admisi&kapasitas perlu disesuaikan. 
+
+Rekomendasi: Tingkatkan digitalisasi admisi&tambah kuota bila diperlukan.
 
 ### Insight 2: Proporsi Gender
 
-Observasi: Pendaftar perempuan lebih banyak dibanding laki-laki. Bukti:
-Perempuan mencapai 65–70% pendaftar setiap tahun. Visualisasi: Grafik
-proporsi gender.
+Observasi: Pendaftar perempuan lebih banyak dibanding laki-laki. 
+
+Bukti: Perempuan mencapai 65–70% pendaftar setiap tahun. 
+
+Visualisasi: Grafik proporsi gender.
 
 ``` r
 # Data Kerangka untuk Grafik 2 (Data dari perhitungan gender_counts)
@@ -353,14 +359,19 @@ ggplot(df_wawasan2, aes(x = Tahun, y = Jumlah, fill = Gender)) +
 ```
 
 ![University_Admissions_and_Student_Insights](insight2.png)<!-- -->
-Implikasi: Perbedaan gender memengaruhi kebutuhan kampus. Rekomendasi:
-Evaluasi penyebab dan buat program keseimbangan gender.
+
+
+Implikasi: Perbedaan gender memengaruhi kebutuhan kampus. 
+
+Rekomendasi: Evaluasi penyebab dan buat program keseimbangan gender.
 
 ### Insight 3: Mahasiswa Internasional
 
-Observasi: Jumlah mahasiswa internasional meningkat. Bukti: Naik 22 → 46
-mahasiswa, dengan IPK rata-rata 3,50. Visualisasi: Tren mahasiswa
-internasional.
+Observasi: Jumlah mahasiswa internasional meningkat. 
+
+Bukti: Naik 22 → 46 mahasiswa, dengan IPK rata-rata 3,50. 
+
+Visualisasi: Tren mahasiswa internasional.
 
 ``` r
 # Data Kerangka untuk Grafik 3
@@ -389,5 +400,8 @@ ggplot(df_wawasan3, aes(x = Tahun, y = Intl_Students, group = 1)) +
 ```
 
 ![University_Admissions_and_Student_Insights](insight3.png)<!-- -->
+
+
 Implikasi: Mahasiswa internasional membutuhkan dukungan tambahan.
+
 Rekomendasi: Tingkatkan pendampingan dan evaluasi akademik.
