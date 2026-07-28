@@ -311,7 +311,7 @@ ggplot(df_wawasan1, aes(x = Tahun)) +
     ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
     ## generated.
 
-![](Analisis-Data-Penerimaan-dan-Demografi-Mahasiswa_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![University_Admissions_and_Student_Insights](insight1.png)<!-- -->
 
 Implikasi: Pendaftar meningkat, proses admisi&kapasitas perlu
 disesuaikan. Rekomendasi: Tingkatkan digitalisasi admisi&tambah kuota
@@ -352,7 +352,7 @@ ggplot(df_wawasan2, aes(x = Tahun, y = Jumlah, fill = Gender)) +
   theme(plot.title = element_text(face = "bold", size = 14))
 ```
 
-![](Analisis-Data-Penerimaan-dan-Demografi-Mahasiswa_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![University_Admissions_and_Student_Insights](insight2.png)<!-- -->
 Implikasi: Perbedaan gender memengaruhi kebutuhan kampus. Rekomendasi:
 Evaluasi penyebab dan buat program keseimbangan gender.
 
@@ -388,6 +388,6 @@ ggplot(df_wawasan3, aes(x = Tahun, y = Intl_Students, group = 1)) +
   theme(plot.title = element_text(face = "bold", size = 14, color = "#1e824c"))
 ```
 
-![](Analisis-Data-Penerimaan-dan-Demografi-Mahasiswa_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+![University_Admissions_and_Student_Insights](insight3.png)<!-- -->
 Implikasi: Mahasiswa internasional membutuhkan dukungan tambahan.
 Rekomendasi: Tingkatkan pendampingan dan evaluasi akademik.
