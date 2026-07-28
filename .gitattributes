@@ -1,2 +1,0 @@
-*.html linguist-vendored
-*.Rmd linguist-language=RMarkdown linguist-detectable=true
