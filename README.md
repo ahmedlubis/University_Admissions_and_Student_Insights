@@ -1,93 +1,62 @@
-# 🎓 Academic Information System Dataset
+# 🎓 Dataset Sistem Informasi Akademik
 
-## 📖 Dataset Overview
+## 📖 Ringkasan Dataset
 
-This dataset represents several core business processes within a university academic information system, covering the complete student lifecycle—from admission, academic activities, graduation, to study program master data.
+Dataset ini merepresentasikan beberapa proses bisnis utama dalam sistem informasi akademik perguruan tinggi, mencakup seluruh siklus hidup mahasiswa—mulai dari penerimaan mahasiswa baru (admisi), aktivitas akademik, kelulusan, hingga data master program studi.
 
-The database consists of **four interconnected datasets** that can be linked using student identifiers such as the **Student Identification Number (NIM)** and study program information.
-
----
-
-# 🗂️ Dataset Description
-
-## 1. Admission Data (`admisi.csv`)
-
-This table records the **student admission process** at the university.
-
-It contains applicant registration information along with attributes that indicate each applicant's final admission status.
-
-Applicants who successfully pass the admission process and officially enroll as students are assigned a **Student Identification Number (NIM)**.
-
-### Key Characteristics
-
-- Records applicant registration data
-- Indicates admission status
-- Generates a **NIM** for accepted applicants
-- The **NIM** is designed as a **Smart Key**, uniquely identifying each student throughout their academic lifecycle
+Database ini terdiri dari empat dataset yang saling terhubung dan dapat dihubungkan menggunakan identifikasi mahasiswa seperti **Nomor Induk Mahasiswa (NIM)** serta informasi program studi.
 
 ---
 
-## 2. Academic Activity Data (`aktivitas-perkuliahan.csv`)
+## 🗂️ Deskripsi Dataset
 
-This table records students' academic activities throughout their studies.
+### 1. Data Admisi (`admisi.csv`)
 
-It includes course enrollments, semester records, remedial programs, credit loads (SKS), and letter grades obtained in each course.
+Tabel ini mencatat proses penerimaan mahasiswa baru di universitas. Tabel memuat informasi pendaftaran calon mahasiswa beserta atribut yang menunjukkan status akhir penerimaan dari setiap pendaftar. Pendaftar yang berhasil lolos seleksi dan resmi mendaftar ulang sebagai mahasiswa akan mendapatkan Nomor Induk Mahasiswa (NIM).
 
-The recorded grades are later converted into numerical grade points and used to calculate each student's **Grade Point Average (GPA / IPK)**.
-
----
-
-### GPA (IPK) Calculation
-
-The cumulative GPA is calculated using the standard weighted-average formula:
-
-```text
-GPA (IPK) = Σ(Grade Point × Credit Hours) / Σ(Credit Hours)
-```
-
-where:
-
-- **Grade Point** = Numerical value assigned to each letter grade
-- **Credit Hours (SKS)** = Credit weight of each course
+**Karakteristik Utama:**
+* Mencatat data pendaftaran pendaftar
+* Menunjukkan status penerimaan (lolos/tidak)
+* Menghasilkan NIM untuk pendaftar yang diterima
+* NIM dirancang sebagai **Smart Key**, yang secara unik mengidentifikasi setiap mahasiswa sepanjang siklus akademik mereka
 
 ---
 
-### Semester Code Format
+### 2. Data Aktivitas Perkulihan (`aktivitas-perkuliahan.csv`)
 
-Semester codes follow the format:
+Tabel ini mencatat aktivitas akademik mahasiswa selama masa studi. Tabel mencakup pengambilan mata kuliah, catatan semester, program remedial, beban sks, dan nilai huruf yang diperoleh pada setiap mata kuliah. Nilai yang tercatat kemudian dikonversi menjadi bobot nilai numerik untuk menghitung Indeks Prestasi Kumulatif (IPK) mahasiswa.
 
-```text
-[Academic Year (4 digits)][Semester Code (1 digit)]
-```
+#### Perhitungan IPK
 
-Example:
+IPK kumulatif dihitung menggunakan rumus rata-rata tertimbang standar:
 
-```text
-20251
-```
+$$\text{IPK} = \frac{\sum (\text{Bobot Nilai} \times \text{SKS})}{\sum \text{SKS}}$$
 
-represents:
+*Keterangan:*
+* **Bobot Nilai** = Nilai numerik yang disesuaikan dengan nilai huruf
+* **SKS** = Bobot kredit dari setiap mata kuliah
 
-- **Academic Year:** 2025/2026
-- **Semester:** Odd Semester
+#### Format Kode Semester
 
----
+Kode semester mengikuti format: `[Tahun Akademik (4 digit)][Kode Semester (1 digit)]`
 
-### Semester Code Classification
+* **Contoh:** `20251`
+  * **Tahun Akademik:** 2025/2026
+  * **Semester:** Ganjil
 
-| Code | Semester Type |
-|------|---------------|
-| **1** | Odd Semester |
-| **2** | Even Semester |
-| **3** | Odd Semester Remedial |
-| **4** | Even Semester Remedial |
+#### Klasifikasi Kode Semester
 
----
+| Kode | Jenis Semester |
+| :---: | :--- |
+| **1** | Semester Ganjil |
+| **2** | Semester Genap |
+| **3** | Remedial Ganjil |
+| **4** | Remedial Genap |
 
-### Letter Grade Conversion
+#### Konversi Nilai Huruf
 
-| Grade | Grade Point |
-|-------|------------:|
+| Nilai Huruf | Bobot Nilai |
+| :---: | :---: |
 | **A** | 4.00 |
 | **A-** | 3.70 |
 | **B+** | 3.30 |
@@ -100,78 +69,44 @@ represents:
 
 ---
 
-## 3. Graduation Data (`peserta-wisuda-tervalidasi.csv`)
+### 3. Data Kelulusan (`peserta-wisuda-tervalidasi.csv`)
 
-This table records students who have successfully completed all academic requirements and have been officially validated as graduation ceremony participants.
+Tabel ini mencatat mahasiswa yang telah berhasil menyelesaikan seluruh persyaratan akademik dan telah divalidasi secara resmi sebagai peserta upacara wisuda.
 
-### Key Characteristics
-
-- Records graduation eligibility
-- Indicates students who have fulfilled all academic requirements
-- Contains validated graduation participant information
-- Represents the final stage of the student academic lifecycle
-
----
-
-## 4. Study Program Master Data (`homebase.csv`)
-
-This table serves as the **master reference dataset** for institutional academic classifications.
-
-It provides standardized information regarding:
-
-- Faculty
-- Degree level
-- Study program
-
-The dataset is primarily used as a reference table for integrating and categorizing academic records across the other datasets.
-
-### Key Characteristics
-
-- Faculty information
-- Degree level classification
-- Study program information
-- Reference (master) data for academic reporting
+**Karakteristik Utama:**
+* Mencatat kelayakan kelulusan
+* Menunjukkan mahasiswa yang telah memenuhi seluruh persyaratan akademik
+* Berisi informasi peserta wisuda yang tervalidasi
+* Merepresentasikan tahap akhir dari siklus hidup akademik mahasiswa
 
 ---
 
-# 📌 Dataset Relationships
+### 4. Data Master Program Studi (`homebase.csv`)
 
-The four datasets collectively describe the complete academic journey of a university student:
+Tabel ini berfungsi sebagai dataset referensi utama untuk klasifikasi akademik institusi. Tabel ini menyediakan informasi terstandarisasi mengenai fakultas, jenjang pendidikan, dan program studi.
+
+Dataset ini utamanya digunakan sebagai tabel acuan (reference) untuk mengintegrasikan dan mengkategorikan catatan akademik di seluruh dataset lainnya.
+
+**Karakteristik Utama:**
+* Informasi fakultas
+* Klasifikasi jenjang pendidikan
+* Informasi program studi
+* Data acuan (master) untuk pelaporan akademik
+
+---
+
+## 📌 Relasi Dataset
+
+Keempat dataset ini secara kolektif menggambarkan perjalanan akademik lengkap seorang mahasiswa:
 
 ```text
-Admission
-     │
-     ▼
-Student (NIM)
-     │
-     ▼
-Academic Activities
-     │
-     ▼
-Graduation
-```
-
-The **Study Program Master Data (`homebase.csv`)** acts as a reference table that supports and enriches information across all academic datasets.
-
----
-
-# 📝 Summary
-
-This dataset provides a comprehensive representation of university academic operations, covering:
-
-- Student admission processes
-- Academic activities and course performance
-- GPA (IPK) calculation
-- Semester classifications
-- Graduation records
-- Faculty and study program master data
-
-Because these datasets represent sequential academic business processes, they are well suited for applications such as:
-
-- Academic performance analysis
-- Student progression tracking
-- Graduation analytics
-- Institutional reporting
-- Educational data mining
-- Student success prediction
-- Academic dashboard development
+Admisi
+  │
+  ▼
+Mahasiswa (NIM)
+  │
+  ▼
+Aktivitas Perkuliahan
+  │
+  ▼
+Wisuda / Kelulusan
